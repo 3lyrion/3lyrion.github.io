@@ -16,7 +16,7 @@ var projectData = [
         "desc": "An engine I've been working on occasionally over the past few years",
         "languages": ["C++"],
         "libraries": ["SFML"],
-        "other": [""],
+        "other": [],
         "collaborators": ["3lyrion (Mikhail Grasin)"]
     },
     {
@@ -25,8 +25,8 @@ var projectData = [
         "image": "../assets/images/placeholder_2.png",
         "desc": "A physics based 3D golf game with an integrated course builder, a collaborative project with Brodie Griggs",
         "languages": ["C++"],
-        "libraries": [""],
-        "other": [""],
+        "libraries": [],
+        "other": [],
         "collaborators": ["3lyrion (Mikhail Grasin)"]
     },
     {
@@ -45,8 +45,8 @@ var projectData = [
         "image": "../assets/images/placeholder_3.png",
         "desc": "A Rollercoaster building and simulation project that uses splines to generate track meshes and car animations",
         "languages": ["C++"],
-        "libraries": [""],
-        "other": [""],
+        "libraries": [],
+        "other": [],
         "collaborators": ["3lyrion (Mikhail Grasin)"]
     },
     {
@@ -55,8 +55,8 @@ var projectData = [
         "image": "../assets/images/placeholder_3.png",
         "desc": "A Rollercoaster building and simulation project that uses splines to generate track meshes and car animations",
         "languages": ["C++"],
-        "libraries": [""],
-        "other": [""],
+        "libraries": [],
+        "other": [],
         "collaborators": ["3lyrion (Mikhail Grasin)"]
     },
     {
@@ -65,8 +65,8 @@ var projectData = [
         "image": "../assets/images/placeholder_3.png",
         "desc": "A Rollercoaster building and simulation project that uses splines to generate track meshes and car animations",
         "languages": ["C++"],
-        "libraries": [""],
-        "other": [""],
+        "libraries": [],
+        "other": [],
         "collaborators": ["3lyrion (Mikhail Grasin)"]
     },
     {
@@ -76,12 +76,18 @@ var projectData = [
         "desc": "A Rollercoaster building and simulation project that uses splines to generate track meshes and car animations",
         "languages": ["C++", "Lua"],
         "libraries": ["sol2"],
-        "other": [""],
+        "other": [],
         "collaborators": ["3lyrion (Mikhail Grasin)"]
     }
 ]
 
-$(document).ready(function()
+var appliedFilters = {
+    "languages": ["C++", "C#", "Lua"],
+    "libraries": ["SFML", "RmlUi", "WPF", "sol2"],
+    "other": ["HTML", "CSS", "XML", "TOML", "SQL"]
+}
+
+$(document).ready(() =>
     {
         var tiles = ``;
         projectData.forEach(data =>
@@ -91,7 +97,9 @@ $(document).ready(function()
                         <img src="${data.image}" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">${data.name}</h5>
-                            <p class="card-text text_light">${data.desc}</p>
+                            <p class="card-text text_light">
+                                ${data.desc} ${data.languages.join(', ')} ${data.libraries.join(', ')} ${data.other.join(', ')}
+                            </p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
@@ -99,108 +107,45 @@ $(document).ready(function()
             }
         );
 
-        document.querySelector('div#content div#tiles').innerHTML = tiles;
+        document.querySelector('.div-info > .div-tiles').innerHTML = tiles;
+
+        var inputs = $('.div-filters input[type="checkbox"]');
+        inputs.each((_, el) => el.checked = true);
     }
 );
 
-function updateFilter(group, id)
+function updateFilter(e, group, id)
 {
-    var cards = $('div#tiles > div.card');
+    var input = e.srcElement;
+    if (input.checked)
+    {
+        appliedFilters[group].push(id);
+    }
+    else
+    {
+        var tr_filters = appliedFilters[group];
+        appliedFilters[group] = tr_filters.filter(f => f != id);
+    }
 
+    var cards = $('.div-tiles > div.card');
     for (var i = 0; i < cards.length; i++)
     {
         var card = cards[i];
         var data = projectData.find(d => d.id == card.id);
-            
-        if (data[group].includes(id))
-            card.style.display = 'block';
 
-        else
-            card.style.display = 'none';
+    //    filters.some(f => data[group].includes(f))
+
+        card.style.display = 'none';
+
+        for (key in appliedFilters)
+        {
+            if (appliedFilters[key].some(f => data[key].includes(f)))
+            {
+                card.style.display = 'block';
+                appear(card); // loading.js
+
+                break;
+            }
+        }
     }
 }
-
-
-// function getProjectData(projectId)
-// {
-//     for (let i = 0; i < projectData.length; ++i)
-//     {
-//         if (projectData[i].id == projectId)
-//         {
-//             return projectData[i];
-//         }
-//     }
-// }
-
-// function addProjectCardToDiv(project, divId, reverseGrid)
-// {
-//     let projectDiv = document.createElement("div");
-
-//     let projectDivHTML = "";
-//     projectDivHTML += '<a href = "/projects/' + project.id + '">';
-    
-//     if (reverseGrid)
-//     {
-//         projectDivHTML += '<div class = "portfolio_tile reversed_grid">';
-//         projectDivHTML += '<div class = "portfolio_tile_text reversed_grid_a">';
-//     }
-//     else
-//     {
-//         projectDivHTML += '<div class = "portfolio_tile">';
-//         projectDivHTML += '<div class = "portfolio_tile_text">';
-//     }
-    
-//     projectDivHTML += '<span class = "alt_accent_text"><span class = "medium_detail">' + project.name + '</span></span><br>';
-
-//     projects["languages"].forEach(lang =>
-//         {
-//             projectDivHTML += '<span class = "text-code text-lang">' + lang + '</span>';
-//         }
-//     );
-
-//     projects["libraries"].forEach(lang =>
-//         {
-//             projectDivHTML += '<span class = "text-code text-lang">' + language + '</span>';
-//         }
-//     );
-    
-//     let library = project["libraries"][0];
-//     if (library != "")
-//     {
-//         projectDivHTML += '<span class = "light_text"> & </span>';
-//     }
-    
-//     if (library == "opengl" || library == "directx11")
-//     {
-//         projectDivHTML += '<span class = "cpp_text">' + library + '</span>';
-//     }
-//     else if (library == "s2d" || library == "sdl2" || library == "winforms")
-//     {
-//         projectDivHTML += '<span class = "cls_text">' + library + '</span>';
-//     }
-//     else if (library == "pygame")
-//     {
-//         projectDivHTML += '<span class = "py_text">' + library + '</span>';
-//     }
-    
-//     projectDivHTML += '<div class = "portfolio_tile_description"><span class = "light_text">' + project.desc + '</span></div>';
-
-//     projectDivHTML += '</div>';
-    
-//     if (reverseGrid)
-//     {
-//         projectDivHTML += '<img class = "portfolio_tile_image reversed_grid_b" src = "' + project.image + '">';
-//     }
-//     else
-//     {
-//         projectDivHTML += '<img class = "portfolio_tile_image" src = "' + project.image + '">';
-//     }
-    
-//     projectDivHTML += '</div></a>';
-    
-//     projectDiv.classList.add("content_main");
-    
-//     projectDiv.innerHTML = projectDivHTML;
-    
-//     document.getElementById(divId).append(projectDiv);
-// }
