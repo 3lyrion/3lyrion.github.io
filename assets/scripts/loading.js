@@ -20,7 +20,7 @@ function updateModuleList()
     
     var animateLeft = false;
     
-    var allMods = $("div#content div#info, div#content div#title, div#content div#carousel, #show_more_button, div#post-card");
+    var allMods = $("div#content div#info, div#content div#title, div#content div#carousel, #show_more_button, div.card");
     // Already visible modules
     allMods.each(function(i, el) {
         var el = $(el);

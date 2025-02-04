@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <title>3lyrion (Mikhail Grasin)</title>
+	    
+        <link rel="stylesheet" href="../assets/libs/font-awesome.min.css">
+        <link rel="stylesheet" href="../assets/libs/bootstrap.min.css">
+		<link rel="stylesheet" media="screen and (pointer:fine)" href="../assets/styles/styles-desktop.css">
+		<link rel="stylesheet" media="screen and (pointer:coarse)" href="../assets/styles/styles-mobile.css">
+		
+		<link rel="icon" href="../assets/images/icon.png">
+		<meta name="description" content="Programmer">
+		<meta name="keywords" content="3lyrion,Mikhail,Grasin,Computer,Programs,Libraries,Games,Programmer,Professional,Portfolio">
+		
+		<meta name="viewport" media="screen and (pointer:coarse)" content="width=device-width, initial-scale=1">
+		
+	    <script src="../assets/libs/jquery.min.js"></script>
+        <script src="../assets/libs/bootstrap.bundle.min.js"></script>
+        
+        <script src="../assets/scripts/projects.js"></script>
+        <script src="../assets/scripts/loading.js"></script>
+	</head>
+	<body>
+		<div id="header">
+            <div>
+                <img id="logo" src="../assets/images/logo.png">
+            </div>
+
+            <div id="nav">
+                <a class="btn-link" href="../index.html">ABOUT</a>
+                <a class="btn-link" href="projects.html">PROJECTS</a>
+                <a class="btn-link" href="#">CONTACT</a>
+            </div>
+
+            <div id="right">
+                <a class="btn-main" href="CV.html">View CV &#11106;</a>
+            </div>
+		</div>
+
+        <div id="content">
+            <div>
+                <div id="title">
+                    <span>Project library</span>
+                </div>
+                <div id="info">
+                    <span>
+                        Welcome to the project library! Here you can sort through all of my public projects and find any you're interested in.
+                    </span>
+
+                    <br><br>
+
+                    <span>
+                        <div class="grid-1-3">
+                            <div>
+                                <span class="text-acc1">Languages</span>
+                                <br>
+                                <div id="filter-list" class="border_acc1 text_light">
+                                    <div><label><input id="filter-language-c++" type="checkbox" onclick="updateFilter(&#39;languages&#39;, &#39;C++&#39;)"> C++</label><br></div>
+                                    <div><label><input id="filter-language-c#" type="checkbox" onclick="updateFilter(&#39;languages&#39;, &#39;C#&#39;)"> C#</label><br></div>
+                                    <div><label><input id="filter-language-lua" type="checkbox" onclick="updateFilter(&#39;languages&#39;, &#39;Lua&#39;)"> Lua</label><br></div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-acc2">
+                                <span>Libraries</span>
+                                <br>
+                                <div id="filter-list" class="border_acc2 text_light">
+                                    <div><label><input id="filter-library-sfml" type="checkbox" onclick="updateFilter(&#39;libraries&#39;, &#39;SFML&#39;)"> SFML</label><br></div>
+                                    <div><label><input id="filter-library-rmlui" type="checkbox" onclick="updateFilter(&#39;libraries&#39;, &#39;RmlUi&#39;)"> RmlUi</label><br></div>
+                                    <div><label><input id="filter-library-wpf" type="checkbox" onclick="updateFilter(&#39;libraries&#39;, &#39;WPF&#39;)"> WPF</label><br></div>
+                                    <div><label><input id="filter-library-sol2" type="checkbox" onclick="updateFilter(&#39;libraries&#39;, &#39;sol2&#39;)"> sol2</label><br></div>
+                                </div>
+                            </div>
+
+                            <div class="text-acc3">
+                                <span>Other</span>
+                                <br>
+                                <div id="filter-list" class="border_acc3 text_light">
+                                    <div><label><input id="filter-other-html" type="checkbox" onclick="updateFilter(&#39;other&#39;, &#39;HTML&#39;)"> HTML</label><br></div>
+                                    <div><label><input id="filter-other-css" type="checkbox" onclick="updateFilter(&#39;other&#39;, &#39;CSS&#39;)"> CSS</label><br></div>
+                                    <div><label><input id="filter-other-xml" type="checkbox" onclick="updateFilter(&#39;other&#39;, &#39;XML&#39;)"> XML</label><br></div>
+                                    <div><label><input id="filter-other-toml" type="checkbox" onclick="updateFilter(&#39;other&#39;, &#39;TOML&#39;)"> TOML</label><br></div>
+                                    <div><label><input id="filter-other-sql" type="checkbox" onclick="updateFilter(&#39;other&#39;, &#39;SQL&#39;)"> SQL</label><br></div>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+
+                    <div id="title" style="margin-left: 0px;">
+                        <span>Results</span>
+                    </div>
+                    <br>
+                    <div id="tiles">
+                        
+                    </div>
+
+
+                    <!-- 
+                    <script>
+                        var filters = {
+                            "keyword": {
+                                "3d": false,
+                                "2d": false,
+                                "game": false,
+                                "demo": false,
+                                "clone": false,
+                                "physics": false,
+                                "collab": false,
+                            },
+                            "language": {
+                                "c++": false,
+                                "c#": false,
+                                "python": false,
+                            },
+                            "library": {
+                                "directx11": false,
+                                "opengl": false,
+                                "pygame": false,
+                                "sdl2": false,
+                                "s2d": false,
+                            },
+                        }
+        
+                        function updateFilter(group, id, updateTiles)
+                        {
+                            filters[group][id] = document.getElementById("filter-" + group + "-" + id).checked;
+                            
+                            console.log("Filter " + group + "->" + id + ": " + filters[group][id]);
+                            
+                            if (updateTiles)
+                            {
+                                updateProjectTiles();
+                            
+                                updateModuleList();
+                            }
+                        }
+                        
+                        function updateAllFilters(updateTiles)
+                        {
+                            for (const [filter_group_name, filter_group_values] of Object.entries(filters))
+                            {
+                                for (const [filter_name, filter_value] of Object.entries(filter_group_values))
+                                {
+                                    updateFilter(filter_group_name, filter_name, false);
+                                }
+                            }
+                            
+                            if (updateTiles)
+                            {
+                                updateProjectTiles();
+                                
+                                updateModuleList(); 
+                            }
+                        }
+                        
+                        function allOfGroupDisabled(group)
+                        {
+                            for (const [key, value] of Object.entries(filters[group]))
+                            {
+                                if (value)
+                                {
+                                    return false;
+                                }
+                            }
+                            
+                            return true;
+                        }
+                        
+                        function doFiltersMatch(selectedFilters, projectFilters)
+                        {
+                            let filtersMatch = true;
+                                    
+                            for (const [key, value] of Object.entries(selectedFilters))
+                            {
+                                if (value)
+                                {
+                                    let projectHasFilter = false;
+                                    for (let j = 0; j < projectFilters.length; ++j)
+                                    {
+                                        if (projectFilters[j] == key)
+                                        {
+                                            projectHasFilter = true;
+                                        }
+                                    }
+                                    
+                                    if (!projectHasFilter)
+                                    {
+                                        filtersMatch = false;
+                                    }
+                                }
+                            }
+                            
+                            return filtersMatch;
+                        }
+                        
+                        function updateProjectTiles()
+                        {
+                            document.getElementById("portfolio_tiles").innerHTML = "";
+                            
+                            let numProjectsFound = 0;
+                            
+                            for (let i = 0; i < projectData.length; ++i)
+                            {
+                                let  project = projectData[i];
+                                
+                                let keywordMatch = true;
+                                if (!allOfGroupDisabled("keyword"))
+                                {
+                                    keywordMatch = doFiltersMatch(filters["keyword"], project["keywords"])
+                                }
+                                
+                                let languageMatch = true;
+                                if (!allOfGroupDisabled("language"))
+                                {
+                                    languageMatch = doFiltersMatch(filters["language"], project["languages"])
+                                }
+                                
+                                let libraryMatch = true;
+                                if (!allOfGroupDisabled("library"))
+                                {
+                                    libraryMatch = doFiltersMatch(filters["library"], project["libraries"])
+                                }
+                                
+                                if (keywordMatch && languageMatch && libraryMatch)
+                                {
+                                    numProjectsFound++;
+                                    
+                                    addProjectCardToDiv(project, "portfolio_tiles", numProjectsFound % 2 == 0);
+                                }
+                            }
+                            
+                            if (numProjectsFound == 0)
+                            {
+                                let noPostsFoundDiv = document.createElement("DIV");
+                                
+                                noPostsFoundDiv.innerHTML = '<span class = "light_text">No projects found with given filters :(</span>';
+                                
+                                noPostsFoundDiv.classList.add("content_main");
+                                noPostsFoundDiv.style.visibility = "visible";
+        
+                                document.getElementById("portfolio_tiles").append(noPostsFoundDiv);
+                            }
+                        }
+                        
+                        updateAllFilters();
+                        
+                        updateProjectTiles();
+                    </script> -->
+                </div>
+			</div>   
+		</div>
+
+        <div id="footer">
+            <a class="btn-link" href="mailto:583fark@gmail.com"><img src="../assets/images/email.png"></a>
+            <a class="btn-link" href="https://github.com/3lyrion/"><img src="../assets/images/github.png"></a>
+            <a class="btn-link" href="https://t.me/@Σ∫yrioη"><img src="../assets/images/telegram.png"></a>
+        </div>
+	</body>
+</html>
