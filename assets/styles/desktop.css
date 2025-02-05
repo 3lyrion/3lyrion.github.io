@@ -45,7 +45,8 @@
 
 :root
 {
-    --backgroundMainColor: #E3E4E6;
+    /* --backgroundMainColor: #E3E4E6; */
+    --backgroundMainColor: #f7f7f7;
     --borderMainColor: #DBDCDC;
     
     --textColorLight: #777777;
@@ -403,7 +404,7 @@ body
 	width: 100%;
 	height: 100%;
 
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/background_main.jpg");
     background-attachment: fixed;
     background-position: center; 
     background-size: cover;
