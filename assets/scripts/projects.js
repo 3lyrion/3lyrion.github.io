@@ -93,40 +93,41 @@ $(document).ready(() =>
         projectData.forEach(data =>
             {
                 tiles += `
-                    <div id="${data.id}" class="card">
+                    <a href="#" id="${data.id}" class="card div_border_acc3">
                         <img src="${data.image}" class="card-img" style="opacity: 0.33">
                         <div class="card-img-overlay" style="top: 66%;">
-                            <h5 class="card-title">${data.name}</h5>
-                            <p class="card-text text_light">
-                                ${data.desc} ${data.languages.join(', ')} ${data.libraries.join(', ')} ${data.other.join(', ')}
-                            </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                `;
+                            <h5 class="text_acc3">${data.name}</h5>
+                            <div class="div_tile_info text_light">
+                                <span style="width: 50%;">${data.desc}</span>
 
-                // tiles += `
-                //     <div id="${data.id}" class="card border-info">
-                //         <div class="row">
-                //             <div class="col">
-                //                 <img src="${data.image}" class="img-fluid rounded-start">
-                //             </div>
-                //             <div class="col-6">
-                //                 <div class="card-body">
-                //                     <h5 class="card-title">${data.name}</h5>
-                //                     <p class="card-text text_light">
-                //                         ${data.desc} ${data.languages.join(', ')} ${data.libraries.join(', ')} ${data.other.join(', ')}
-                //                     </p>
-                //                     <a href="#" class="btn btn-primary">Go somewhere</a>
-                //                 </div>
-                //             </div>
-                //         </div>
-                //     </div>
-                // `;
+                                <div id="tags" class="grid_1_4 div_border_acc4" style="width: 40%; padding: 10px 0px;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
             }
         );
 
-        document.querySelector('.div_info > .div_tiles').innerHTML = tiles;
+        var div_tiles = document.querySelector('.div_info > .div_tiles');
+        div_tiles.innerHTML = tiles;
+
+        var cards = $(div_tiles).find('a.card');
+        cards.each(
+            (_, card) =>
+            {
+                var tags = ``;
+
+                var data = projectData.find(d => d.id == card.id);
+                data.languages  .forEach(el => tags += `<span class="text_code text_acc1">${el}</span>`);
+                data.libraries  .forEach(el => tags += `<span class="text_code text_acc2">${el}</span>`);
+                data.other      .forEach(el => tags += `<span class="text_code text_acc3">${el}</span>`);
+
+                var div_tags = $(card).find('div#tags')[0];
+                div_tags.innerHTML = tags;
+            }
+        );
 
         var inputs = $('.div_filters input[type="checkbox"]');
         inputs.each((_, el) => el.checked = true);
