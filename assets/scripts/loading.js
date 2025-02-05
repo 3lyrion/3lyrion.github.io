@@ -1,6 +1,6 @@
 var animation   = 'arrival';
 var targets     = new Set();
-var newTargets  = new Set();
+// var newTargets  = new Set();
 
 $.fn.visible = function()
 {
@@ -34,7 +34,7 @@ function animate(element)
 
 $(document).ready(() => 
     {
-        $(".div-title, .div-info").each(
+        $(".div_title, .div_info, .div_carousel").each(
             (_, el) => 
             {
                 animate(el);

@@ -94,8 +94,8 @@ $(document).ready(() =>
             {
                 tiles += `
                     <div id="${data.id}" class="card">
-                        <img src="${data.image}" class="card-img-top">
-                        <div class="card-body">
+                        <img src="${data.image}" class="card-img" style="opacity: 0.33">
+                        <div class="card-img-overlay" style="top: 66%;">
                             <h5 class="card-title">${data.name}</h5>
                             <p class="card-text text_light">
                                 ${data.desc} ${data.languages.join(', ')} ${data.libraries.join(', ')} ${data.other.join(', ')}
@@ -104,12 +104,31 @@ $(document).ready(() =>
                         </div>
                     </div>
                 `;
+
+                // tiles += `
+                //     <div id="${data.id}" class="card border-info">
+                //         <div class="row">
+                //             <div class="col">
+                //                 <img src="${data.image}" class="img-fluid rounded-start">
+                //             </div>
+                //             <div class="col-6">
+                //                 <div class="card-body">
+                //                     <h5 class="card-title">${data.name}</h5>
+                //                     <p class="card-text text_light">
+                //                         ${data.desc} ${data.languages.join(', ')} ${data.libraries.join(', ')} ${data.other.join(', ')}
+                //                     </p>
+                //                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                //                 </div>
+                //             </div>
+                //         </div>
+                //     </div>
+                // `;
             }
         );
 
-        document.querySelector('.div-info > .div-tiles').innerHTML = tiles;
+        document.querySelector('.div_info > .div_tiles').innerHTML = tiles;
 
-        var inputs = $('.div-filters input[type="checkbox"]');
+        var inputs = $('.div_filters input[type="checkbox"]');
         inputs.each((_, el) => el.checked = true);
     }
 );
@@ -127,7 +146,7 @@ function updateFilter(e, group, id)
         appliedFilters[group] = tr_filters.filter(f => f != id);
     }
 
-    var cards = $('.div-tiles > div.card');
+    var cards = $('.div_tiles > div.card');
     for (var i = 0; i < cards.length; i++)
     {
         var card = cards[i];
