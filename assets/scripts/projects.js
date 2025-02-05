@@ -96,12 +96,17 @@ $(document).ready(() =>
                     <a href="#" id="${data.id}" class="card div_border_acc3">
                         <img src="${data.image}" class="card-img" style="opacity: 0.33">
                         <div class="card-img-overlay" style="top: 66%;">
-                            <h5 class="text_acc3">${data.name}</h5>
                             <div class="div_tile_info text_light">
-                                <span style="width: 50%;">${data.desc}</span>
+                                <div style="width: 50%;">
+                                    <h5 class="text_acc3">${data.name}</h5>
+                                    <span style="width: 50%;">${data.desc}</span>
+                                </div>
 
-                                <div id="tags" class="grid_1_4 div_border_acc4" style="width: 40%; padding: 10px 0px;">
+                                <div class="text_size_a" style="width: 40%;">
+                                    <h5 class="text_acc4">Tags</h5>
+                                    <div id="tags" class="grid_1_4 div_border_acc4 text_code" style="width: 100%; margin-top: 10px; padding: 7.5px 0px;">
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -126,6 +131,8 @@ $(document).ready(() =>
 
                 var div_tags = $(card).find('div#tags')[0];
                 div_tags.innerHTML = tags;
+
+                appear(card); // loading.js
             }
         );
 
@@ -147,13 +154,11 @@ function updateFilter(e, group, id)
         appliedFilters[group] = tr_filters.filter(f => f != id);
     }
 
-    var cards = $('.div_tiles > div.card');
+    var cards = $('.div_tiles > a.card');
     for (var i = 0; i < cards.length; i++)
     {
         var card = cards[i];
         var data = projectData.find(d => d.id == card.id);
-
-    //    filters.some(f => data[group].includes(f))
 
         card.style.display = 'none';
 

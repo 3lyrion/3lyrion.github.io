@@ -31,10 +31,10 @@
         opacity: 0.0;
     }
 
-    50%
+    /* 50%
     {
         opacity: 0.16;
-    }
+    } */
 
     100%
     {
@@ -59,9 +59,9 @@
     --accentColor4: #BD63C5;
     
     --mainFont: Sansus Webissimo;
-    --mainFontSize: 24px;
-    
     --altFont: Monaco;
+
+    --mainFontSize: 24px;
     --altFontSize: 19px;
 }
 
@@ -196,6 +196,7 @@
     margin: auto;
 	margin-top:20px;
 	
+    border: 2px solid var(--accentColor1);
 	border-radius: 26px;
 }
 
@@ -312,7 +313,6 @@
 .text_code
 {
     font-family: var(--altFont);
-    font-size: var(--altFontSize);
     font-weight: 600;
 }
 
@@ -339,6 +339,21 @@
 .text_acc3
 {
     color: var(--accentColor3);
+}
+
+.text_acc4
+{
+    color: var(--accentColor4);
+}
+
+.text_size_m
+{
+    font-size: var(--mainFontSize);
+}
+
+.text_size_a
+{
+    font-size: var(--altFontSize);
 }
 
 .text_blurry

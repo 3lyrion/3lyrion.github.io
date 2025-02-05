@@ -1,6 +1,5 @@
 var animation   = 'arrival';
 var targets     = new Set();
-// var newTargets  = new Set();
 
 $.fn.visible = function()
 {
@@ -14,14 +13,15 @@ $.fn.visible = function()
 
 function appear(element)
 {
-    // var el = $(element);
-    // if (el.visible() && el.hasClass(animation))
-    // {
-    //     el.removeClass(animation);
-    //     setTimeout(() => el.addClass(animation), 33);
+    var el = $(element);
+    if (el.hasClass(animation))
+        setTimeout(() => 
+        {
+            el.removeClass(animation);
 
-    //     newTargets.add(element);
-    // }
+        }, 16.66);
+
+    targets.add(element);
 }
 
 function animate(element)
@@ -29,7 +29,6 @@ function animate(element)
     var el = $(element);
     if (el.visible() && !el.hasClass(animation))
         el.addClass(animation);
-//        el.addClass(animation)
 }
 
 $(document).ready(() => 
@@ -44,32 +43,11 @@ $(document).ready(() =>
 
         $(document).scroll(() =>
             {
-                // for (var i = 0; i < newTargets.size; i++)
-                // {
-                //     var el = $(newTargets[i]);
-                //     if (el.visible())
-                //     {
-                //         if (el.hasClass(animation))
-                //         {
-                //             el.removeClass(animation);
-                //             setTimeout(() => el.addClass(animation), 33);
-                //         }
-
-                //         else
-                //             setTimeout(() => el.addClass(animation), 33);
-                //     }
-
-                //     targets.add(newTargets[i]); 
-                // }
-
                 targets.forEach(el =>
                     {
-                        // if (!newTargets.has(el))
-                            animate(el);
+                        animate(el);
                     }
                 );
-
-                // newTargets.clear();
             }
         );
     }
