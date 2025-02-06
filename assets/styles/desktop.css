@@ -61,7 +61,7 @@
 :root
 {
     /* --backgroundMainColor: #E3E4E6; */
-    --backgroundMainColor: #f7f7f7;
+    --backgroundMainColor: #f9f9f9;
     --borderMainColor: #DBDCDC;
     
     --textColorLight: #777777;
@@ -113,6 +113,53 @@
     border-color: var(--accentColor4);
 }
 
+.btn_scr
+{
+    display: block;
+
+    width: auto;
+    line-height: 30px;
+
+    font-size: var(--mainFontSize);
+    color: var(--textColorDark);
+
+    transition: transform 0.3s;
+
+    text-decoration: none;
+}
+
+.btn_scr:hover
+{
+    text-decoration: none;
+    color: var(--textColorLight);
+    cursor: pointer;
+}
+
+.btn_link
+{
+    display: inline;
+
+    margin: 5px;
+
+    backface-visibility: hidden;
+
+    line-height: var(--mainFontSize);
+    font-size: var(--mainFontSize);
+    color: var(--textColorDark);
+
+    transition: transform 0.3s;
+
+    text-decoration: none;
+}
+
+.btn_link:hover
+{
+    transform: scale(1.30);
+    text-decoration: none;
+    color: initial;
+    cursor: pointer;
+}
+
 .btn_prim
 {
     display: inline-block;
@@ -144,67 +191,22 @@
     text-decoration: none;
 }
 
-.btn_link
-{
-    display: inline;
-
-    margin: 5px;
-    line-height: 30px;
-
-    font-size: var(--mainFontSize);
-    color: var(--textColorDark);
-    text-align: center;
-
-    transition: transform 0.3s;
-
-    text-decoration: none;
-}
-
-.btn_link:hover
-{
-    transform: scale(1.30);
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-/* bootstrap */
-/* .card
-{
-    border: 2px solid var(--accentColor4);
-    border-radius: 25px;
-} */
-
 /* bootstrap */
 .card:not(:last-child)
 {
     margin-bottom: 50px;
 }
 
-/* bootstrap*/
-/* .card-img-top
-{
-    border-top-left-radius: 25px !important;
-    border-top-right-radius: 25px !important;
-} */
-
-/* bootstrap*/
-/* .card .img-fluid, .card .rounded-start
-{
-    border-top-left-radius: 25px !important;
-    border-bottom-left-radius: 25px !important;
-} */
-
 .div_border_acc3
 {
     border: 2px solid var(--accentColor3);
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 .div_border_acc4
 {
     border: 1px solid var(--accentColor4);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .div_carousel
@@ -262,6 +264,7 @@
     border: 2px solid var(--accentColor1);
 	border-radius: 26px;
 	
+    color: var(--textColorLight);
 	text-align: left;
 }
 
@@ -277,10 +280,20 @@
     justify-content: space-between;
     align-items: start;
 
-    /* left: 50%; */
+    left: 50%;
+    top: 100%;
     width: 100%;
     height: 80%;
-    /* transform: translate(-50%, 0%); */
+    transform: translate(-50%, -100%);
+
+    padding: 5px 10px;
+
+    backdrop-filter: blur(50px);
+
+    /* background-color: var(--backgroundMainColor); */
+
+    border: 1px solid var(--borderMainColor);
+    border-radius: 5px;
 }
 
 .div_tiles
@@ -433,6 +446,22 @@ body
     scroll-behavior: smooth;
 }
 
+a
+{
+    text-decoration: none;
+}
+
+a.card img
+{
+    transform: scale(1.00) translateZ(0);
+    transition: transform 0.60s;
+}
+
+a.card:hover img
+{
+    transform: scale(1.20) translateZ(0);
+}
+
 button:focus
 {
 	outline: none;
@@ -459,6 +488,12 @@ label:hover
 {
     cursor: pointer;    
 }
+
+/* li
+{
+    display: inline-block;
+    width: auto;
+} */
 
 /* stop bootstrap fucking everything up */
 pre
