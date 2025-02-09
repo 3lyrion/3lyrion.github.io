@@ -33,6 +33,8 @@ function animate(element)
 
 $(document).ready(() => 
     {
+        
+
         $(".div_title, .div_info, .div_carousel").each(
             (_, el) => 
             {
