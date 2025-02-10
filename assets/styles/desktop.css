@@ -500,6 +500,18 @@ label:hover
     width: auto;
 } */
 
+ol
+{
+    margin-top: 0px;
+    font-size: var(--mainFontSize);
+}
+
+video
+{
+    width: 100%;
+    height: auto;
+}
+
 /* stop bootstrap fucking everything up */
 pre
 {

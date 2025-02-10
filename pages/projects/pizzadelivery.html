@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <title>3lyrion (Mikhail Grasin)</title>
+	    
+        <link rel="stylesheet" href="../../assets/libs/font-awesome.min.css">
+        <link rel="stylesheet" href="../../assets/libs/bootstrap.min.css">
+		<link rel="stylesheet" media="screen and (pointer:fine)" href="../../assets/styles/desktop.css">
+		<link rel="stylesheet" media="screen and (pointer:coarse)" href="../../assets/styles/mobile.css">
+		
+		<link rel="icon" href="../../assets/images/icon.png">
+		<meta name="description" content="Programmer">
+		<meta name="keywords" content="3lyrion,Mikhail,Grasin,Computer,Code,Program,Application,API,Library,Game,Programmer,Professional,Portfolio">
+		
+		<meta name="viewport" media="screen and (pointer:coarse)" content="width=device-width, initial-scale=1">
+		
+	    <script src="../../assets/libs/jquery.min.js"></script>
+        <script src="../../assets/libs/bootstrap.bundle.min.js"></script>
+        <script src="../../assets/scripts/loading.js"></script>
+	</head>
+	<body>
+		<div id="header">
+            <div>
+                <img id="logo" src="../../assets/images/logo.png">
+            </div>
+
+            <div id="nav">
+                <a class="btn_link" href="../../index.html">ABOUT</a>
+                <a class="btn_link" href="../projects.html">PROJECTS</a>
+                <a class="btn_link" href="../contact.html">CONTACT</a>
+            </div>
+
+            <div id="right">
+                <a class="btn_prim" href="https://drive.google.com/drive/folders/18ihAsISQ3x1Qw98LEOVWq6Q-dde7u6KO?usp=drive_link">View CV &#11106;</a>
+            </div>
+		</div>
+
+        <div id="content">
+            <div>
+                <div class="div_title">
+                    <span>Pizza Delivery</span>
+                </div>
+                <div class="div_info">
+                    <span>My first project is in C# + WPF, using the MVVM design pattern. Customers use the client app, while cooks and couriers use the employee app. The server application automatically distributes orders among employees.</span>
+                </div>
+
+                <div class="div_title">
+                    <span>Functional requirements</span>
+                </div>
+                <div class="div_info">
+                    <p>The corresponding GUI elements are provided for all actions in the application. Authorization is available for all users.</p>
+                    <span>The following actions will be available for the client:</span>
+                    <ol>
+                        <li>View pizza data</li>
+                        <li>Making his own pizza</li>
+                        <li>Adding the selected pizza to the cart</li>
+                        <li>Making an order</li>
+                        <li>View the current order</li>
+                        <li>View the order history</li>
+                    </ol>
+                    <span>Available actions for the cook and the courier:</span>
+                    <ol>
+                        <li>View the current order</li>
+                        <li>Changing the order status</li>
+                        <li>View the order history</li>
+                    </ol>
+                </div>
+
+                <div class="div_title">
+                    <span>Automation facilities</span>
+                </div>
+                <div class="div_info">
+                    <p>The automation objects are the processes of creating orders and assigning them to free couriers, as well as confirming that the order has been delivered.</p>
+                    <p>Customers place orders through the desktop application, where they select a pizza or create their own, place an order, specifying the delivery address and username. After the order is created, the system automatically assigns the order to a free cook.</p>
+                    <p>After completing the pizza preparation, the cook changes the order status to "Delivered", and the system automatically assigns it to a free courier.</p>
+                    <p>The courier receives information about the new order in the app. After the order is delivered, it should change its status.</p>
+                    <p>At the order completion stage, the system tracks the delivery time and provides customers with feedback on the status of their order. All operations are recorded in a database for process analysis and optimization.</p>
+                </div>
+                
+                <div class="div_title">
+                    <span>Demonstration</span>
+                </div>
+                <div class="div_info">
+                    <video playsinline="" autoplay="" muted="" loop="">
+                        <source src="../../assets/videos/projects/pizzadelivery/demonstration.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="div_title">
+                    <a href="https://drive.google.com/drive/folders/1Ox1qIRCrRZBlcqLNDGEWynjTlfdN8NSJ?usp=sharing">Documentation (diagrams and more)</a>
+                </div>
+			</div>   
+		</div>
+
+        <div id="footer">
+            <a class="btn_link" href="mailto:583fark@gmail.com"><img src="../../assets/images/email.png"></a>
+            <a class="btn_link" href="https://github.com/3lyrion/"><img src="../../assets/images/github.png"></a>
+            <a class="btn_link" href="https://t.me/@Σ∫yrioη"><img src="../../assets/images/telegram.png"></a>
+        </div>
+	</body>
+</html>
