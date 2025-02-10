@@ -79,7 +79,7 @@
     --altFont: Monaco;
 
     --mainFontSize: 24px;
-    --altFontSize: 19px;
+    --altFontSize: 18px;
 }
 
 .arrival
@@ -219,7 +219,7 @@
     max-height: 550px;
     
     margin: auto;
-	margin-top:20px;
+	margin-top: 20px;
 	
     border: 2px solid var(--accentColor1);
 	border-radius: 26px;
@@ -337,6 +337,45 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
+}
+
+.list_code_lines
+{
+    width: auto;
+
+    border: 1px solid var(--textColorLight);
+    border-radius: 5px;
+}
+
+.list_code_lines > li
+{
+    list-style: none;
+}
+
+.li_sep
+{
+    margin-bottom: 20px;
+}
+
+.li_sep > li
+{
+    margin-bottom: 20px;
+}
+
+.ol_br
+{
+    counter-reset: list;
+}
+
+.ol_br > li
+{
+    list-style: none;
+}
+
+.ol_br > li:before
+{
+    content: counter(list) ") ";
+    counter-increment: list;
 }
 
 .text_code
@@ -500,7 +539,7 @@ label:hover
     width: auto;
 } */
 
-ol
+ol, ul
 {
     margin-top: 0px;
     font-size: var(--mainFontSize);
@@ -512,23 +551,22 @@ video
     height: auto;
 }
 
-/* stop bootstrap fucking everything up */
 pre
 {
-    color: var(--textColorLight);
     display: block;
+
+    /* width: fit-content; */
+
     padding: 9.5px;
-    font-size: inherit;
-    line-height: 1.42857143;
-    word-break: inherit;
-    word-wrap: inherit;
-    background-color: inherit;
-    border: inherit;
-    border-radius: inherit;
-    text-align: left;
-    margin:0;
+    margin: 0px;
     
-    box-shadow: inset 0 0 20px #121212; 
+    line-height: inherit;
+    color: var(--textColorLight);
+    font-size: inherit;
+    text-align: left;
+
+    border: 1px solid var(--textColorLight);
+    border-radius: 5px;
 }
 
 body > div#header

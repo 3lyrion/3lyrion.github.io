@@ -9,7 +9,7 @@
 		<link rel="stylesheet" media="screen and (pointer:fine)" href="../../assets/styles/desktop.css">
 		<link rel="stylesheet" media="screen and (pointer:coarse)" href="../../assets/styles/mobile.css">
 		
-		<link rel="icon" href="../assets/images/icon.png">
+		<link rel="icon" href="../../assets/images/icon.png">
 		<meta name="description" content="Programmer">
 		<meta name="keywords" content="3lyrion,Mikhail,Grasin,Computer,Code,Program,Application,API,Library,Game,Programmer,Professional,Portfolio">
 		
@@ -17,9 +17,7 @@
 		
 	    <script src="../../assets/libs/jquery.min.js"></script>
         <script src="../../assets/libs/bootstrap.bundle.min.js"></script>
-        
         <script src="../../assets/scripts/loading.js"></script>
-        <script src="../../assets/scripts/projects.js"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -44,19 +42,171 @@
                     <span>Interpeter (Simplified JavaScript)</span>
                 </div>
                 <div class="div_info">
-                    <h2 class="text_acc1">Easy JS (Simplified JavaScript)</h2>
-                    <ol class="text_size_m">
+                    <h3 class="text_acc1">Easy JS (Simplified JavaScript)</h3>
+                    <ol>
                         <a class="btn_scr text_acc2" href="#"><li>Alphabet</li></a>
                         <a class="btn_scr text_acc2" href="#"><li>Syntax</li></a>
                         <a class="btn_scr text_acc2" href="#"><li>Semantics</li></a>
-                        <a class="btn_scr text_acc2" href="#"><li>Description</li></a>
+                        <a class="btn_scr text_acc2" href="#"><li>Usage example</li></a>
                     </ol>
 
-                    <h2 class="text_acc1">The Interpeter</h2>
-                    <ol class="text_size_m">
-                        <li><a href="#">Placeholder</a></li>
-                        <li><a href="#">Placeholder</a></li>
-                        <li><a href="#">Placeholder</a></li>
+                    <h3 class="text_acc1">The Interpeter</h3>
+                    <ol>
+                        <a class="btn_scr text_acc2" href="#"><li>Placeholder</li></a>
+                        <a class="btn_scr text_acc2" href="#"><li>Placeholder</li></a>
+                        <a class="btn_scr text_acc2" href="#"><li>Placeholder</li></a>
+                        <a class="btn_scr text_acc2" href="#"><li>Placeholder</li></a>
+                    </ol>
+                </div>
+
+                <div class="div_title">
+                    <span>Easy JS (Simplified JavaScript)</span>
+                </div>
+                <div class="div_info">
+                    <ol>
+                        <li id="alphabet" class="text_acc2 li_sep">
+                            <span>Alphabet</span>
+                            <ul class="text_light">
+                                <li>Keywords: bool, const, false, float, else, if, int, print, true, string, while</li>
+                                <li>Identificators: `[A-Za-z_]+[A-Za-z0-9_]*`</li>
+                                <li>Integer type: `-?([1-9][0-9]*|0)`</li>
+                                <li>Real type: `-?[0-9]*\.[0-9]*`</li>
+                                <li>String type: `[^"\n\r\t]*`</li>
+                                <li>Meaningful  separators: '{', '}', '(', ')', '.', ',', ';', '−', '+', '*', '/', '%', '^', '!', '!=', '==', '&&', '||', '>=', '<=', '>', '<', '='</li>
+                                <li>Minor separators: space, tab, line break</li>
+                                <li>Comments: same as in JS</li>
+                            </ul>
+                        </li>
+
+                        <li id="syntax" class="text_acc2 li_sep">
+                            <span class="text_acc2">Syntax</span>
+                            <ul class="text_light">
+                                <li>program = { declaration | statement | block }</li>
+                                <li>declaration = ( typeSpec <b>id</b>  [ "=" expression ] ) | ( "const" typeSpec <b>id</b>  "=" expression ) ";"</li>
+                                <li>typeSpec = "bool" | "int" | "float" | "string"</li>
+                                <li>expression = logic1 { "||" logic1 }</li>
+                                <li>logic1 = logic2 { "&&" logic2 }</li>
+                                <li>logic2 = logic3 [ ( "==" | "!=" ) logic3 ]</li>
+                                <li>logic3 = term [ ( "<" | ">" | "<=" | "=>" ) term ]</li>
+                                <li>term = factor { ( "+" | "-" ) factor }</li>
+                                <li>factor = power { ( "*" | "/" | "%" ) power }</li>
+                                <li>power = operand { "^" operand }</li>
+                                <li>operand = [ "-" | "!" ] ( <b>id</b> | literal | "(" expression ")" )</li>
+                                <li>literal = "true" | "false" | <b>float</b> | <b>int</b> | <b>string</b></li>
+                                <li>statement = selStmt | iterStmt | printStmt | exprStmt</li>
+                                <li>selStmt = "if" "(" expression ")" block [ "else" block ]</li>
+                                <li>block = "{" program "}"</li>
+                                <li>iterStmt = "while" "(" expression ")" block</li>
+                                <li>printStmt = "print" expression ";"</li>
+                                <li>exprStmt = <b>id</b>  "=" expression ";"</li>
+                            </ul>
+                        </li>
+
+                        <li id="semantics" class="text_acc2 li_sep">
+                            <span class="text_acc2">Semantics</span>
+                            <ol class="text_light ol_br li_sep">
+                                <li>Constants
+                                    <br>
+                                    They can be either boolean (“false”, “true") or integers. (“-1”, “203”, ...) and floating point numbers (“-1030.02”, “0.0”, ...), so are the strings (“abc", “V1a", ...).
+                                </li>
+
+                                <li>Expressions
+                                    <br>
+                                    They are made up of brackets, variables, constants, and algebraic operations.
+                                </li>
+
+                                <li>Algebraic operations
+                                    <br>"+" – addition
+                                    <br>"−" – subtraction
+                                    <br>"*" – multiplication
+                                    <br>"/" – division (the result can be decimal)
+                                    <br>"%" – remainder of division
+                                    <br>"^" – exponentiation
+                                </li>
+                                <li>Operators
+                                    <br>
+                                    <ol class="ol_br li_sep">
+                                        <li>Assignment operator
+                                            <br>
+                                            The assignment operator is used to assign a value to a variable. It has the form subject = object. The operator can assign the result of evaluating an expression to a variable.
+                                            <br>
+                                            Example:
+                                            <pre class="text_code text_size_a">
+float fS = f1 + f2;
+int
+bool
+string</pre>
+                                        <li>Logical operators
+                                            <br>"!" – logical NOT
+                                            <br>"&&" – logical AND
+                                            <br>"||" – logical OR
+                                            <br>"!=" – not equal
+                                            <br>"==" – equal
+                                            <br>"<=" – less or equal
+                                            <br>">=" – greater or equal
+                                            <br>"<" – less
+                                            <br>">" – greater
+                                        </li>
+                                        <li>The output operator
+                                            <br>
+                                            The output operator outputs the value of a variable from a new line.
+                                            <br>
+                                            Example:
+                                            <pre class="text_code text_size_a">
+print num;
+print “output”;</pre>
+                                        </li>
+                                        <li>The loop
+                                            <br>
+                                            Organizes the repetition of the execution of a sequence of program statements.
+                                            <br>
+                                            Example:
+                                            <pre class="text_code text_size_a">
+while (sum != 10)
+{
+    sum = sum + 2;
+}</pre>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li id="usage-example" class="text_acc2">
+                            <span>Usage example</span>
+                            <pre class="text_code text_light text_size_a">
+// Declarations
+bool finish = false;
+float sum = 5.0;
+const float FACTOR = 2.;
+string str = "Abcdef";
+int count;
+count = 0;
+int d = 5;
+
+if (d % 2 == 0)
+{
+}
+else
+{
+    sum=0.0;
+}
+
+/*
+Loop
+*/
+while (finish == false)
+{
+    sum = 5.0+(sum+10.0) * -FACTOR^1.5;
+    count = count + 1;
+    finish = !(count > 100 || sum <= 1.0 && sum >= 0.0);	
+}
+
+{
+print "Result";
+print sum;
+}</pre>
+                        </li>
                     </ol>
                 </div>
 			</div>   

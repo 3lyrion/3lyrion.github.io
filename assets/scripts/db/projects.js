@@ -34,7 +34,7 @@ var projects = [
     },
     {
         "id": "pizza-delivery",
-        "link": "#",
+        "link": "projects/pizzadelivery.html",
         "name": "Pizza Delivery",
         "image": "projects/pizzadelivery.png",
         "desc": "My first project is in C# + WPF, using the MVVM design pattern. Customers use the client app, while cooks and couriers use the employee app. The server application automatically distributes orders among employees.",
