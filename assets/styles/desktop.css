@@ -570,6 +570,49 @@ ol, ul
     font-size: var(--mainFontSize);
 }
 
+ol > li::marker
+{
+    color: inherit;
+}
+
+table
+{
+    border-collapse: collapse;
+	box-sizing: border-box;
+	display: table;
+    table-layout: fixed;
+    text-align: center;
+}
+
+tr, th
+{
+	box-sizing: border-box;
+	display: table-row;
+}
+
+td
+{
+	box-sizing: border-box;
+	display: table-cell;
+    border-width: 1px;
+}
+
+col
+{
+	box-sizing: border-box;
+	display: table-column;
+}
+
+colgroup
+{
+	display: table-column-group;
+}
+
+thead, tbody, tfoot
+{
+	display: table-row-group;
+}
+
 video
 {
     width: 100%;
@@ -579,11 +622,12 @@ video
 pre
 {
     display: block;
+    white-space: pre;
 
     /* width: fit-content; */
 
     padding: 9.5px;
-    margin: 0px;
+    margin: 5px 0px;
     
     line-height: inherit;
     color: inherit;

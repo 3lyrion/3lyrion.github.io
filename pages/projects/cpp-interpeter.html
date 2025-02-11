@@ -42,23 +42,26 @@
                     <span>Interpeter (Simplified JavaScript)</span>
                 </div>
                 <div class="div_info">
-                    <h3 class="text_acc1">Easy JS (Simplified JavaScript)</h3>
-                    <ol>
-                        <a class="btn_scr text_acc2" href="#alphabet"><li>Alphabet</li></a>
-                        <a class="btn_scr text_acc2" href="#syntax"><li>Syntax</li></a>
-                        <a class="btn_scr text_acc2" href="#semantics"><li>Semantics</li></a>
-                        <a class="btn_scr text_acc2" href="#usage-example"><li>Usage example</li></a>
-                    </ol>
+                        <a class="btn_scr text_acc1" href="#easy-js">Easy JS (Simplified JavaScript)</a>
+                        <ol>
+                            <a class="btn_scr text_acc2" href="#alphabet"><li>Alphabet</li></a>
+                            <a class="btn_scr text_acc2" href="#syntax"><li>Syntax</li></a>
+                            <a class="btn_scr text_acc2" href="#semantics"><li>Semantics</li></a>
+                            <a class="btn_scr text_acc2" href="#usage-example"><li>Usage example</li></a>
+                        </ol>
 
-                    <h3 class="text_acc1">The Interpeter</h3>
-                    <ol>
-                        <a class="btn_scr text_acc2" href="#lexer"><li>Lexer</li></a>
-                        <a class="btn_scr text_acc2" href="#parser"><li>Parser</li></a>
-                        <a class="btn_scr text_acc2" href="#shell"><li>Shell</li></a>
-                    </ol>
+                        <a class="btn_scr text_acc1" href="#interpeter">The Interpeter</a>
+                        <ol>
+                            <a class="btn_scr text_acc2" href="#lexer"><li>Lexer</li></a>
+                            <a class="btn_scr text_acc2" href="#parser"><li>Parser</li></a>
+                            <a class="btn_scr text_acc2" href="#shell"><li>Shell</li></a>
+                        </ol>
+
+                        <a class="btn_scr text_acc1" href="#demonstration">Demonstration</a>
+                        <a class="btn_scr text_acc1" href="#links">Links</a>
                 </div>
 
-                <div class="div_subtitle text_acc1">
+                <div id="easy-js" class="div_subtitle text_acc1">
                     <span>Easy JS (Simplified JavaScript)</span>
                 </div>
                 <div class="div_info">
@@ -131,7 +134,8 @@
                                             <br>
                                             Example:
                                             <pre class="border_light text_code text_size_a">
-float fS = f1 + f2;</pre>
+float fS = f1 + f2;
+</pre>
                                         <li>Logical operators
                                             <br>"!" – logical NOT
                                             <br>"&&" – logical AND
@@ -150,9 +154,10 @@ float fS = f1 + f2;</pre>
                                             Example:
                                             <pre class="border_light text_code text_size_a">
 print num;
-print “output”;</pre>
+print "output";
+</pre>
                                         </li>
-                                        <li>The loop
+                                        <li>The loop operator
                                             <br>
                                             Organizes the repetition of the execution of a sequence of program statements.
                                             <br>
@@ -161,9 +166,59 @@ print “output”;</pre>
 while (sum != 10)
 {
     sum = sum + 2;
-}</pre>
+}
+</pre>
                                         </li>
                                     </ol>
+                                </li>
+
+                                <li>Priority of operations
+                                    <table border="1" style="width: 300px;">
+                                        <tr style="background-color: #d2d2d2;">
+                                            <td>Priority</td>
+                                            <td>Operations</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>(, )</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>^</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>!, –a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>*, /, %</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>a + b, a – b</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td><, >, <=, =></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>==, !=</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>&&</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>||</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>print</td>
+                                        </tr>
+                                    </table>
                                 </li>
                             </ol>
                         </li>
@@ -201,12 +256,13 @@ while (finish == false)
 {
 print "Result";
 print sum;
-}</pre>
+}
+</pre>
                         </li>
                     </ol>
                 </div>
 
-                <div class="div_subtitle text_acc1">
+                <div id="interpeter" class="div_subtitle text_acc1">
                     <span>The Interpeter</span>
                 </div>
                 <div class="div_info">
@@ -223,9 +279,35 @@ print sum;
 
                         <li id="shell" class="text_acc2 li_sep">Shell
                             <br>
-                            <span class="text_light">Traverses the interpretation tree and performs the corresponding operations.</span>
+                            <span class="text_light">
+                                It moves through the interpretation tree and performs the corresponding operations.
+                                <br>
+                                Features of the work:
+                                <ol class="ol_br">
+                                    <li>For each scope, there is a list of variables that is destroyed when closed; each <b>calculated expression</b> automatically uses a new temporary scope.</li>
+                                    <li>There is no recursion; nested expressions are transformed into a single one, and then this expression is evaluated.
+                                    <li>An expression consisting of more than one token is converted to the Reverse Polish Notation format, and then calculated.</li>
+                                </ol>
+                                It issues errors in the following cases:
+                                <ol class="ol_br">
+                                    <li>Incompatibility of variable types, including an attempt to re-assign a value to a constant variable.</li>
+                                    <li>Unsupported operation for the data type.</li>
+                                    <li>Re-declaring a variable.</li>
+                                </ol>
+                            </span>
                         </li>
                     </ol>
+                </div>
+
+                <div id="demonstration" class="div_subtitle text_acc1">
+                    <span>Demonstration</span>
+                </div>
+
+                <div id="links" class="div_subtitle text_acc1">
+                    <span>Links</span>
+                    <ul>
+                        <a class="btn_scr text_acc2" href="https://github.com/3lyrion/CPP-Interpreter"><li>Source code</li></a>
+                    </ul>
                 </div>
 			</div>   
 		</div>
