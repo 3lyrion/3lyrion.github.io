@@ -35,7 +35,7 @@ $(document).ready(() =>
     {
         
 
-        $(".div_title, .div_info, .div_carousel").each(
+        $(".div_title, .div_subtitle, .div_info, .div_carousel").each(
             (_, el) => 
             {
                 animate(el);

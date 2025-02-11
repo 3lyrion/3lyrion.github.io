@@ -78,6 +78,7 @@
     --mainFont: Sansus Webissimo;
     --altFont: Monaco;
 
+    --bigFontSize: 30px;
     --mainFontSize: 24px;
     --altFontSize: 18px;
 }
@@ -112,6 +113,11 @@
 .border_acc4
 {
     border-color: var(--accentColor4);
+}
+
+.border_light
+{
+    border-color: var(--textColorLight);
 }
 
 .btn_scr
@@ -320,6 +326,20 @@
 	margin-left: 20px;
     
 	color: var(--textColorDark);
+	font-size: 52px;
+	font-family: var(--mainFont);
+	text-align :left;
+}
+
+.div_subtitle
+{
+    visibility: hidden;
+
+	padding: 20px;
+	padding-bottom: 0px;
+	margin-left: 20px;
+    
+	color: var(--textColorDark);
 	font-size: 40px;
 	font-family: var(--mainFont);
 	text-align :left;
@@ -412,6 +432,11 @@
 .text_acc4
 {
     color: var(--accentColor4);
+}
+
+.text_size_b
+{
+    font-size: var(--bigFontSize);
 }
 
 .text_size_m
@@ -561,11 +586,12 @@ pre
     margin: 0px;
     
     line-height: inherit;
-    color: var(--textColorLight);
+    color: inherit;
     font-size: inherit;
     text-align: left;
 
-    border: 1px solid var(--textColorLight);
+    border: 1px solid transparent;
+    /* border: 1px solid var(--textColorLight); */
     border-radius: 5px;
 }
 

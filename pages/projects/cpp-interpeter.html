@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	    <title>3lyrion (Mikhail Grasin)</title>
+	    <title>Interpeter (Simplified JavaScript) &ndash; 3lyrion (Mikhail Grasin)</title>
 	    
         <link rel="stylesheet" href="../../assets/libs/font-awesome.min.css">
         <link rel="stylesheet" href="../../assets/libs/bootstrap.min.css">
@@ -44,22 +44,21 @@
                 <div class="div_info">
                     <h3 class="text_acc1">Easy JS (Simplified JavaScript)</h3>
                     <ol>
-                        <a class="btn_scr text_acc2" href="#"><li>Alphabet</li></a>
-                        <a class="btn_scr text_acc2" href="#"><li>Syntax</li></a>
-                        <a class="btn_scr text_acc2" href="#"><li>Semantics</li></a>
-                        <a class="btn_scr text_acc2" href="#"><li>Usage example</li></a>
+                        <a class="btn_scr text_acc2" href="#alphabet"><li>Alphabet</li></a>
+                        <a class="btn_scr text_acc2" href="#syntax"><li>Syntax</li></a>
+                        <a class="btn_scr text_acc2" href="#semantics"><li>Semantics</li></a>
+                        <a class="btn_scr text_acc2" href="#usage-example"><li>Usage example</li></a>
                     </ol>
 
                     <h3 class="text_acc1">The Interpeter</h3>
                     <ol>
-                        <a class="btn_scr text_acc2" href="#"><li>Placeholder</li></a>
-                        <a class="btn_scr text_acc2" href="#"><li>Placeholder</li></a>
-                        <a class="btn_scr text_acc2" href="#"><li>Placeholder</li></a>
-                        <a class="btn_scr text_acc2" href="#"><li>Placeholder</li></a>
+                        <a class="btn_scr text_acc2" href="#lexer"><li>Lexer</li></a>
+                        <a class="btn_scr text_acc2" href="#parser"><li>Parser</li></a>
+                        <a class="btn_scr text_acc2" href="#shell"><li>Shell</li></a>
                     </ol>
                 </div>
 
-                <div class="div_title">
+                <div class="div_subtitle text_acc1">
                     <span>Easy JS (Simplified JavaScript)</span>
                 </div>
                 <div class="div_info">
@@ -68,10 +67,10 @@
                             <span>Alphabet</span>
                             <ul class="text_light">
                                 <li>Keywords: bool, const, false, float, else, if, int, print, true, string, while</li>
-                                <li>Identificators: `[A-Za-z_]+[A-Za-z0-9_]*`</li>
-                                <li>Integer type: `-?([1-9][0-9]*|0)`</li>
-                                <li>Real type: `-?[0-9]*\.[0-9]*`</li>
-                                <li>String type: `[^"\n\r\t]*`</li>
+                                <li>Identificators: <span></span>[A-Za-z_]+[A-Za-z0-9_]*</li>
+                                <li>Integer type: -?([1-9][0-9]*|0)</li>
+                                <li>Real type: -?[0-9]*\.[0-9]*</li>
+                                <li>String type: [^"\n\r\t]*</li>
                                 <li>Meaningful  separators: '{', '}', '(', ')', '.', ',', ';', '−', '+', '*', '/', '%', '^', '!', '!=', '==', '&&', '||', '>=', '<=', '>', '<', '='</li>
                                 <li>Minor separators: space, tab, line break</li>
                                 <li>Comments: same as in JS</li>
@@ -89,7 +88,7 @@
                                 <li>logic2 = logic3 [ ( "==" | "!=" ) logic3 ]</li>
                                 <li>logic3 = term [ ( "<" | ">" | "<=" | "=>" ) term ]</li>
                                 <li>term = factor { ( "+" | "-" ) factor }</li>
-                                <li>factor = power { ( "*" | "/" | "%" ) power }</li>
+                                <li>factor = power { ( "*" | "" | "%" ) power }</li>
                                 <li>power = operand { "^" operand }</li>
                                 <li>operand = [ "-" | "!" ] ( <b>id</b> | literal | "(" expression ")" )</li>
                                 <li>literal = "true" | "false" | <b>float</b> | <b>int</b> | <b>string</b></li>
@@ -119,7 +118,7 @@
                                     <br>"+" – addition
                                     <br>"−" – subtraction
                                     <br>"*" – multiplication
-                                    <br>"/" – division (the result can be decimal)
+                                    <br>"" – division (the result can be decimal)
                                     <br>"%" – remainder of division
                                     <br>"^" – exponentiation
                                 </li>
@@ -131,11 +130,8 @@
                                             The assignment operator is used to assign a value to a variable. It has the form subject = object. The operator can assign the result of evaluating an expression to a variable.
                                             <br>
                                             Example:
-                                            <pre class="text_code text_size_a">
-float fS = f1 + f2;
-int
-bool
-string</pre>
+                                            <pre class="border_light text_code text_size_a">
+float fS = f1 + f2;</pre>
                                         <li>Logical operators
                                             <br>"!" – logical NOT
                                             <br>"&&" – logical AND
@@ -152,7 +148,7 @@ string</pre>
                                             The output operator outputs the value of a variable from a new line.
                                             <br>
                                             Example:
-                                            <pre class="text_code text_size_a">
+                                            <pre class="border_light text_code text_size_a">
 print num;
 print “output”;</pre>
                                         </li>
@@ -161,7 +157,7 @@ print “output”;</pre>
                                             Organizes the repetition of the execution of a sequence of program statements.
                                             <br>
                                             Example:
-                                            <pre class="text_code text_size_a">
+                                            <pre class="border_light text_code text_size_a">
 while (sum != 10)
 {
     sum = sum + 2;
@@ -174,7 +170,7 @@ while (sum != 10)
 
                         <li id="usage-example" class="text_acc2">
                             <span>Usage example</span>
-                            <pre class="text_code text_light text_size_a">
+                            <pre class="border_light text_code text_light text_size_a">
 // Declarations
 bool finish = false;
 float sum = 5.0;
@@ -209,12 +205,34 @@ print sum;
                         </li>
                     </ol>
                 </div>
+
+                <div class="div_subtitle text_acc1">
+                    <span>The Interpeter</span>
+                </div>
+                <div class="div_info">
+                    <ol>
+                        <li id="lexer" class="text_acc2 li_sep">Lexer
+                            <br>
+                            <span class="text_light">Reads the file character by character and searches for suitable tokens. If an unexpected character or an unclosed multi-line comment is found, it returns an error.</span>
+                        </li>
+
+                        <li id="parser" class="text_acc2 li_sep">Parser
+                            <br>
+                            <span class="text_light">Finds syntactic constructions and generates a token tree for the Shell (interpretation tree). When an unexpected token is detected, it returns an error.</span>
+                        </li>
+
+                        <li id="shell" class="text_acc2 li_sep">Shell
+                            <br>
+                            <span class="text_light">Traverses the interpretation tree and performs the corresponding operations.</span>
+                        </li>
+                    </ol>
+                </div>
 			</div>   
 		</div>
 
         <div id="footer">
-            <a class="btn_link" href="mailto:583fark@gmail.com"><img src="../../assets/images/email.png"></a>
-            <a class="btn_link" href="https://github.com/3lyrion/"><img src="../../assets/images/github.png"></a>
+            <a class="btn_link" href="mailto:3lyrion@gmail.com"><img src="../../assets/images/email.png"></a>
+            <a class="btn_link" href="https://github.com/3lyrion"><img src="../../assets/images/github.png"></a>
             <a class="btn_link" href="https://t.me/@Σ∫yrioη"><img src="../../assets/images/telegram.png"></a>
         </div>
 	</body>

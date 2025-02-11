@@ -22,10 +22,10 @@ var projects = [
         "collaborators": ["3lyrion (Mikhail Grasin)"]
     },
     {
-        "id": "interpreter",
-        "link": "#",
+        "id": "cpp-interpreter",
+        "link": "projects/cpp-interpeter.html",
         "name": "Interpeter (Simplified JavaScript)",
-        "image": "projects/interpeter.png",
+        "image": "projects/cpp-interpeter.png",
         "desc": "The interpreter for my Easy JS language. It consists of a lexer (lexical analysis), a parser (syntactic analysis) and a shell (code execution).",
         "languages": ["C++"],
         "libraries": [],
@@ -33,11 +33,11 @@ var projects = [
         "collaborators": ["3lyrion (Mikhail Grasin)"]
     },
     {
-        "id": "pizza-delivery",
-        "link": "projects/pizzadelivery.html",
+        "id": "wpf-pizzadelivery",
+        "link": "projects/wpf-pizzadelivery.html",
         "name": "Pizza Delivery",
-        "image": "projects/pizzadelivery.png",
-        "desc": "My first project is in C# + WPF, using the MVVM design pattern. Customers use the client app, while cooks and couriers use the employee app. The server application automatically distributes orders among employees.",
+        "image": "projects/wpf-pizzadelivery.png",
+        "desc": "My first project is in C# + WPF + EF 6, using the MVVM design pattern. Customers use the client app, while cooks and couriers use the employee app. The server application automatically distributes orders among employees.",
         "languages": ["C#"],
         "libraries": ["WPF", "EF6"],
         "other": ["XML", "SQL"],
@@ -45,7 +45,7 @@ var projects = [
     },
     {
         "id": "event-manager",
-        "link": "https://github.com/3lyrion/EventManager/",
+        "link": "https://github.com/3lyrion/EventManager",
         "name": "Event Manager",
         "image": "projects/eventmanager.png",
         "desc": "Header-only C++20 simple and fast event bus",
@@ -56,7 +56,7 @@ var projects = [
     },
     {
         "id": "state-machine",
-        "link": "https://github.com/3lyrion/StateMachine/",
+        "link": "https://github.com/3lyrion/StateMachine",
         "name": "State Machine",
         "image": "projects/statemachine.png",
         "desc": "Header-only C++20 simple and fast state machine which uses my Event Manager",
@@ -67,7 +67,7 @@ var projects = [
     },
     {
         "id": "universal-storage",
-        "link": "https://github.com/3lyrion/UniversalStorage/",
+        "link": "https://github.com/3lyrion/UniversalStorage",
         "name": "Universal Storage",
         "image": "projects/universalstorage.png",
         "desc": "Header-only C++20 simple and fast universal container",
@@ -78,7 +78,7 @@ var projects = [
     },
     {
         "id": "sol2-wrapper",
-        "link": "https://github.com/3lyrion/SimpleSol2Wrapper/",
+        "link": "https://github.com/3lyrion/SimpleSol2Wrapper",
         "name": "Simple sol2 Wrapper",
         "image": "projects/sol2wrapper.png",
         "desc": "Header-only C++20 simple sol2 wrapper",
