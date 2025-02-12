@@ -5,13 +5,17 @@ $(document).ready(() =>
 
         for (var i = 0; i < projects.length; i++) // db/project.js
         {
+            var project = projects[i];
+            if (project.image == 'soon.png')
+                continue;
+
             buttons += `
                 <button data-bs-target="#project-carousel" data-bs-slide-to="${i}"></button>
             `;
         
             slides += `
                 <div class="carousel-item">
-                    <img src="assets/images/${projects[i].image}" class="d-block w-100">
+                    <img src="assets/images/${project.image}" class="d-block w-100">
                 </div>
             `;
         }

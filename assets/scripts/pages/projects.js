@@ -10,7 +10,7 @@ $(document).ready(() =>
         projects.forEach(data =>    // db/projects.js
             {
                 tiles += `
-                    <a href="${data.link}" id="${data.id}" class="card div_border_acc3">
+                    <a href="${data.link}" id="${data.id}" class="card div_border_acc3 ${data.link == '#' ? 'disabled' : ''}">
                         <div style="width: 100%; height: 100%;">
                             <img src="../assets/images/${data.image}" class="card-img" style="border: none; border-radius: 2.5px;">
                         </div>
