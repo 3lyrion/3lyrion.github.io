@@ -6,7 +6,7 @@ $(document).ready(() =>
         for (var i = 0; i < projects.length; i++) // db/project.js
         {
             buttons += `
-                <button data-bs-target="#project-carousel" data-bs-slide-to="${i}"</button>
+                <button data-bs-target="#project-carousel" data-bs-slide-to="${i}"></button>
             `;
         
             slides += `

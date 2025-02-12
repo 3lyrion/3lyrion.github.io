@@ -57,7 +57,7 @@
                             <a class="btn_scr text_acc2" href="#shell"><li>Shell</li></a>
                         </ol>
 
-                        <a class="btn_scr text_acc1" href="#demonstration">Demonstration</a>
+                        <a class="btn_scr text_acc1" href="#demonstration" style="margin-bottom: 10px;">Demonstration</a>
                         <a class="btn_scr text_acc1" href="#links">Links</a>
                 </div>
 
@@ -173,10 +173,10 @@ while (sum != 10)
                                 </li>
 
                                 <li>Priority of operations
-                                    <table border="1" style="width: 300px;">
+                                    <table border="1" style="width: 300px; margin: 10px 0px;">
                                         <tr style="background-color: #d2d2d2;">
-                                            <td>Priority</td>
-                                            <td>Operations</td>
+                                            <th>Priority</th>
+                                            <th>Operations</th>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -302,10 +302,60 @@ print sum;
                 <div id="demonstration" class="div_subtitle text_acc1">
                     <span>Demonstration</span>
                 </div>
+                <div id="demonstration-carousel" class="carousel slide div_carousel" data-bs-ride="demonstration-carousel">
+                    <div class="carousel-indicators">
+                        <button data-bs-target="#demonstration-carousel" data-bs-slide-to="0" class="active"></button>
+                        <button data-bs-target="#demonstration-carousel" data-bs-slide-to="1"></button>
+                        <button data-bs-target="#demonstration-carousel" data-bs-slide-to="2"></button>
+                        <button data-bs-target="#demonstration-carousel" data-bs-slide-to="3"></button>
+                        <button data-bs-target="#demonstration-carousel" data-bs-slide-to="4"></button>
+                        <button data-bs-target="#demonstration-carousel" data-bs-slide-to="5"></button>
+                        <button data-bs-target="#demonstration-carousel" data-bs-slide-to="6"></button>
+                        <button data-bs-target="#demonstration-carousel" data-bs-slide-to="7"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../../assets/images/projects/cpp-interpreter.png" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/images/projects/cpp-interpreter/1.png" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/images/projects/cpp-interpreter/2.png" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/images/projects/cpp-interpreter/3.png" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/images/projects/cpp-interpreter/4.png" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/images/projects/cpp-interpreter/5.png" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/images/projects/cpp-interpreter/6.png" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/images/projects/cpp-interpreter/7.png" class="d-block w-100">
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev"data-bs-target="#demonstration-carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" data-bs-target="#demonstration-carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
 
                 <div id="links" class="div_subtitle text_acc1">
                     <span>Links</span>
-                    <ul>
+                </div>
+                <div class="div_info">
+                    <ul style="margin-bottom: 0px;">
                         <a class="btn_scr text_acc2" href="https://github.com/3lyrion/CPP-Interpreter"><li>Source code</li></a>
                     </ul>
                 </div>

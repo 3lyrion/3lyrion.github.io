@@ -23,9 +23,9 @@ var projects = [
     },
     {
         "id": "cpp-interpreter",
-        "link": "projects/cpp-interpeter.html",
+        "link": "projects/cpp-interpreter.html",
         "name": "Interpeter (Simplified JavaScript)",
-        "image": "projects/cpp-interpeter.png",
+        "image": "projects/cpp-interpreter.png",
         "desc": "The interpreter for my Easy JS language. It consists of a lexer (lexical analysis), a parser (syntactic analysis) and a shell (code execution).",
         "languages": ["C++"],
         "libraries": [],
