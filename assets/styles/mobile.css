@@ -643,8 +643,8 @@ body > div#header
     align-content: center;
 
     left: 50%;
-    min-width: 1000px;
-    width: 90%;
+    min-width: 980px;
+	max-width: 90vw;
     height: 50px;
     transform: translate(-50%, 0%);
 
@@ -666,7 +666,7 @@ body > div#content
     justify-content: center;
 	align-items: center;
 
-    width: 100%;
+    width: 100vw;
 	
     text-align: center;
 	
@@ -712,7 +712,7 @@ div#header > div#nav
     align-items: center;
     align-content: center;
 
-    width: 35%;
+    width: 33%;
 
     text-align: center;
 }
@@ -734,6 +734,8 @@ div#header img#logo
 div#content > div
 {
 	min-width: 1000px;
+	max-width: 90vw;
+
 	padding-bottom: 30px;
 	
 	margin-bottom: 20px;
