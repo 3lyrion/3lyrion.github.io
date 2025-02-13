@@ -77,7 +77,7 @@ function updateFilter(e, group, id)
     for (var i = 0; i < cards.length; i++)
     {
         var card = cards[i];
-        var data = projectData.find(d => d.id == card.id);
+        var data = projects.find(d => d.id == card.id);
 
         card.style.display = 'none';
 
