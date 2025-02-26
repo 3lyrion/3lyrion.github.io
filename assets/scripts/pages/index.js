@@ -2,6 +2,7 @@ $(document).ready(() =>
     {
         var buttons = ``;
         var slides  = ``;
+        var index   = 0;
 
         for (var i = 0; i < projects.length; i++) // db/project.js
         {
@@ -10,7 +11,7 @@ $(document).ready(() =>
                 continue;
 
             buttons += `
-                <button data-bs-target="#project-carousel" data-bs-slide-to="${i}"></button>
+                <button data-bs-target="#project-carousel" data-bs-slide-to="${index}"></button>
             `;
         
             slides += `
@@ -18,6 +19,8 @@ $(document).ready(() =>
                     <img src="assets/images/${project.image}" class="d-block w-100">
                 </div>
             `;
+
+            index++;
         }
 
         {
