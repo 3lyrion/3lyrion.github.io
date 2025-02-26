@@ -48,7 +48,7 @@ var projects = [
         "link": "https://github.com/3lyrion/EventManager",
         "name": "Event Manager",
         "image": "projects/eventmanager.png",
-        "desc": "Header-only C++20 simple and fast event bus",
+        "desc": "Header-only C++20 fast and reliable event bus",
         "languages": ["C++"],
         "libraries": [],
         "other": [],
